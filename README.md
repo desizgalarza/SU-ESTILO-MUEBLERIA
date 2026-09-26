@@ -4,9 +4,7 @@ Proyecto web correspondiente a la Práctica Profesionalizante de TECLAB.
 
 ## Entrega parcial
 
-Esta versión muestra una etapa inicial y funcional del proyecto, desarrollada con HTML, CSS y JavaScript. El objetivo de esta entrega es evidenciar la aplicación progresiva de los contenidos trabajados durante la cursada.
-
-En esta etapa se realizó la estructura principal del sitio, el diseño visual, la adaptación básica a distintos tamaños de pantalla y la generación dinámica del catálogo de productos mediante JavaScript.
+Esta es una etapa inicial y funcional del proyecto, desarrollada con HTML, CSS y JavaScript. Se realizó la estructura principal del sitio, el diseño visual, la adaptación básica a distintos tamaños de pantalla y la generación dinámica del catálogo de productos mediante JavaScript.
 
 ## Contenidos aplicados
 
@@ -29,7 +27,7 @@ En esta etapa se realizó la estructura principal del sitio, el diseño visual, 
 
 ## Estado del proyecto
 
-El proyecto continúa en desarrollo. En próximas etapas se incorporarán nuevas funcionalidades de acuerdo con el avance de la cursada y de la Práctica Profesionalizante.
+En desarrollo.
 
 ## Tecnologías utilizadas
 
