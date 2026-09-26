@@ -7,6 +7,18 @@ const botonesFiltro = document.querySelectorAll(".filtro-boton");
 // Esta función recibe un producto y devuelve una tarjeta HTML
 function retornarCardHTML(producto) {
     let precio = producto.precio.toLocaleString("es-AR");
+    let precioHTML = `<p class="producto-precio">${precio}</p>`;
+
+    if (producto.oferta === true && producto.precioAnterior) {
+        let precioAnterior = producto.precioAnterior.toLocaleString("es-AR");
+
+        precioHTML = `
+            <p class="producto-precio">
+                Antes: <del>${precioAnterior}</del><br>
+                Ahora: ${precio}
+            </p>
+        `;
+    }
 
     return `
         <div class="producto-card">
@@ -17,7 +29,7 @@ function retornarCardHTML(producto) {
             <div class="producto-info">
                 <p class="producto-categoria">${producto.categoria}</p>
                 <h3>${producto.nombre}</h3>
-                <p class="producto-precio">$${precio}</p>
+                ${precioHTML}
                 <a href="contacto.html" class="producto-detalle">Consultar</a>
             </div>
         </div>
