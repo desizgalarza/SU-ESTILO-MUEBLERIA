@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de productos de SU ESTILO MUEBLERÍA">
+    <title>Productos | SU ESTILO MUEBLERÍA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="header">
+    <div class="contenedor header-contenido">
+        <a href="index.html"><img src="img/logo-su-estilo.png" alt="Logo de SU ESTILO MUEBLERÍA" class="logo"></a>
+        <nav class="navegacion"><a href="index.html">Inicio</a><a href="productos.html">Productos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+    </div>
+</header>
+<main>
+<section class="productos-presentacion">
+    <div class="contenedor">
+        <p class="titulo-pequeno">NUESTRO CATÁLOGO</p>
+        <h1>Nuestros muebles</h1>
+        <p class="productos-introduccion">Explorá nuestras opciones para living, comedor, dormitorio y cocina.</p>
+    </div>
+</section>
+<section class="productos-filtros">
+    <div class="contenedor">
+        <div class="filtros-categorias">
+            <button class="filtro-boton activo" data-categoria="todos">Todos</button>
+            <button class="filtro-boton" data-categoria="comedor">Comedor</button>
+            <button class="filtro-boton" data-categoria="living">Living</button>
+            <button class="filtro-boton" data-categoria="dormitorio">Dormitorio</button>
+            <button class="filtro-boton" data-categoria="cocina">Cocina</button>
+            <button class="filtro-boton" data-categoria="a-medida">A medida</button>
+            <button class="filtro-boton" data-categoria="ofertas">Ofertas</button>
+        </div>
+    </div>
+</section>
+<section class="seccion-productos"><div class="contenedor"><div id="lista-productos" class="productos-grid"></div></div></section>
+</main>
+<footer class="footer"><div class="contenedor"><p>© 2026 SU ESTILO MUEBLERÍA</p></div></footer>
+<script src="js/datos-productos.js"></script>
+<script src="js/productos.js"></script>
+</body>
+</html>
