@@ -33,28 +33,50 @@ function cargarProductos(array) {
     });
 }
 
+// Filtra los productos según la opción elegida
+function filtrarProductos(categoria) {
+    if (categoria === "todos") {
+        cargarProductos(productos);
+    } else if (categoria === "ofertas") {
+        const productosEnOferta = productos.filter(function(producto) {
+            return producto.oferta === true;
+        });
+
+        cargarProductos(productosEnOferta);
+    } else {
+        const productosFiltrados = productos.filter(function(producto) {
+            return producto.categoria === categoria;
+        });
+
+        cargarProductos(productosFiltrados);
+    }
+}
+
+// Marca visualmente el filtro seleccionado
+function marcarFiltroActivo(categoria) {
+    botonesFiltro.forEach(function(boton) {
+        boton.classList.remove("activo");
+
+        if (boton.dataset.categoria === categoria) {
+            boton.classList.add("activo");
+        }
+    });
+}
+
 // Filtramos los productos cuando se presiona un botón
 botonesFiltro.forEach(function(boton) {
     boton.addEventListener("click", function() {
         const categoria = boton.dataset.categoria;
 
-        botonesFiltro.forEach(function(otroBoton) {
-            otroBoton.classList.remove("activo");
-        });
-
-        boton.classList.add("activo");
-
-        if (categoria === "todos") {
-            cargarProductos(productos);
-        } else {
-            const productosFiltrados = productos.filter(function(producto) {
-                return producto.categoria === categoria;
-            });
-
-            cargarProductos(productosFiltrados);
-        }
+        marcarFiltroActivo(categoria);
+        filtrarProductos(categoria);
     });
 });
 
-// Al abrir la página mostramos todo el catálogo
-cargarProductos(productos);
+// Si se llega desde Inicio con una categoría en la dirección,
+// mostramos directamente esa categoría.
+const parametros = new URLSearchParams(window.location.search);
+const categoriaInicial = parametros.get("categoria") || "todos";
+
+marcarFiltroActivo(categoriaInicial);
+filtrarProductos(categoriaInicial);
